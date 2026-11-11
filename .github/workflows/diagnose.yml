@@ -1,0 +1,161 @@
+name: Diagnose PIB (temporary)
+
+# One-off check. It tries several PIB addresses from GitHub's servers and saves a
+# report to debug/report.txt so the real page layout can be read. Safe to delete afterwards.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests beautifulsoup4
+
+      - name: Probe PIB
+        run: |
+          python - <<'PY'
+          import os, re, sys
+          import requests
+          from bs4 import BeautifulSoup
+
+          os.makedirs("debug", exist_ok=True)
+          lines = []
+
+          def log(*a):
+              s = " ".join(str(x) for x in a)
+              print(s)
+              lines.append(s)
+
+          H = {
+              "User-Agent": "pib-exam-daily/1.0 (personal study tool; reads public PIB pages)",
+              "Accept-Language": "en-IN,en;q=0.9",
+          }
+          DEV = re.compile(r"[ऀ-ॿ]")
+
+          def get(url):
+              try:
+                  return requests.get(url, headers=H, timeout=30, allow_redirects=True)
+              except Exception as e:
+                  log("  ERROR fetching", url, "->", repr(e)[:200])
+                  return None
+
+          def save(name, text, limit=300000):
+              with open(os.path.join("debug", name), "w", encoding="utf-8") as f:
+                  f.write(text[:limit])
+
+          # ---------------------------------------------------------- 1. feeds
+          log("=== 1. FEEDS ===")
+          feeds = [
+              "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3",
+              "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=2&Regid=3",
+              "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1",
+              "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=1",
+              "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=2",
+              "https://www.pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3",
+          ]
+          first_prid = None
+          for n, u in enumerate(feeds):
+              r = get(u)
+              log("")
+              log("FEED", u)
+              if r is None:
+                  continue
+              log("  status", r.status_code, "| bytes", len(r.content), "| content-language:", r.headers.get("Content-Language"), "| set-cookie:", bool(r.headers.get("Set-Cookie")))
+              txt = r.content.decode("utf-8-sig", errors="replace")
+              save(f"feed_{n}.xml", txt, 40000)
+              items = re.findall(r"<item>(.*?)</item>", txt.replace("​", ""), flags=re.S | re.I)
+              log("  items:", len(items))
+              for blk in items[:4]:
+                  t = re.search(r"<title>(.*?)</title>", blk, flags=re.S | re.I)
+                  l = re.search(r"<link>(.*?)</link>", blk, flags=re.S | re.I)
+                  title = (t.group(1).strip() if t else "")[:90]
+                  link = l.group(1).strip() if l else ""
+                  log("   -", "[HINDI]" if DEV.search(title) else "[latin]", title, "|", link)
+                  m = re.search(r"PRID=(\d+)", link)
+                  if m and first_prid is None and n == 0:
+                      first_prid = m.group(1)
+          if first_prid is None:
+              m = re.search(r"PRID=(\d+)", " ".join(lines))
+              first_prid = m.group(1) if m else None
+
+          # ---------------------------------------------------------- 2. release pages
+          log("")
+          log("=== 2. RELEASE PAGE VARIANTS for PRID", first_prid, "===")
+          if first_prid:
+              variants = {
+                  "page_plain": f"https://www.pib.gov.in/PressReleasePage.aspx?PRID={first_prid}",
+                  "page_reg3_lang1": f"https://www.pib.gov.in/PressReleasePage.aspx?PRID={first_prid}&reg=3&lang=1",
+                  "page_reg3_lang2": f"https://www.pib.gov.in/PressReleasePage.aspx?PRID={first_prid}&reg=3&lang=2",
+                  "iframe": f"https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID={first_prid}",
+              }
+              for name, u in variants.items():
+                  r = get(u)
+                  log("")
+                  log("PAGE", name, u)
+                  if r is None:
+                      continue
+                  html = r.content.decode("utf-8-sig", errors="replace")
+                  save(name + ".html", html)
+                  soup = BeautifulSoup(html, "html.parser")
+                  for t in soup(["script", "style", "noscript"]):
+                      t.decompose()
+                  text = soup.get_text("\n", strip=True)
+                  log("  status", r.status_code, "| final url", r.url, "| html bytes", len(html), "| visible text chars", len(text))
+                  log("  has 'Posted On':", "Posted On" in html, "| has Devanagari:", bool(DEV.search(text)))
+                  log("  <title>:", (soup.title.get_text(strip=True) if soup.title else None))
+                  for tag in ("h1", "h2", "h3", "h4"):
+                      vals = [x.get_text(" ", strip=True)[:90] for x in soup.find_all(tag)][:4]
+                      if vals:
+                          log("  ", tag, vals)
+                  classes = set()
+                  for el in soup.find_all(True):
+                      for c in el.get("class", []):
+                          if re.search(r"inistry|elease|content|date|Date|title|Title", c):
+                              classes.add(f"{el.name}.{c}")
+                  log("  interesting classes:", sorted(classes)[:30])
+                  log("  first 500 chars of visible text:")
+                  log("   ", text[:500].replace("\n", " | "))
+
+          # ---------------------------------------------------------- 3. all-releases page
+          log("")
+          log("=== 3. ALL-RELEASES PAGE ===")
+          for u in ("https://www.pib.gov.in/allRel.aspx?lang=1&reg=3", "https://www.pib.gov.in/allRel.aspx"):
+              r = get(u)
+              log("")
+              log("PAGE", u)
+              if r is None:
+                  continue
+              html = r.content.decode("utf-8-sig", errors="replace")
+              save("allrel_" + str(abs(hash(u)) % 1000) + ".html", html)
+              soup = BeautifulSoup(html, "html.parser")
+              links = [(re.search(r"PRID=(\d+)", a["href"]).group(1), a.get_text(" ", strip=True)[:80]) for a in soup.select("a[href*='PRID=']") if re.search(r"PRID=(\d+)", a["href"])]
+              log("  status", r.status_code, "| bytes", len(html), "| release links:", len(links))
+              for pr, tx in links[:12]:
+                  log("   -", pr, "[HINDI]" if DEV.search(tx) else "[latin]", tx)
+              for sel in soup.find_all("select"):
+                  opts = [o.get_text(strip=True) for o in sel.find_all("option")][:8]
+                  log("  select name=", sel.get("name"), "options:", opts)
+
+          with open("debug/report.txt", "w", encoding="utf-8") as f:
+              f.write("\n".join(lines))
+          print("report written")
+          PY
+
+      - name: Save report to the repository
+        run: |
+          git config user.name "pib-exam-daily bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A debug
+          git commit -m "PIB diagnostic report" || echo "nothing to commit"
+          git push || (git pull --rebase && git push)
