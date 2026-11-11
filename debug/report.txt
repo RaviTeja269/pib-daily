@@ -1,0 +1,109 @@
+=== 1. FEEDS ===
+
+FEED https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3
+  status 200 | bytes 7431 | content-language: None | set-cookie: False
+  items: 20
+   - [HINDI] वाणिज्य एवं उद्योग मंत्री श्री पीयूष गोयल ने कहा, भारत मोबिलिटी एक्सपो को वैश्विक स्तर पर  | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334875
+   - [HINDI] दिल्ली हाट में आयोजित ‘शिल्प समागम मेला 2026’ में कुल 64.52 लाख रुपये से अधिक की बिक्री हु | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334869
+   - [HINDI] आर्थिक तंगी से लेकर वैश्विक स्तर की शिक्षा के अवसर तक का सफर | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334818
+   - [HINDI] व्यावसायिक जोखिम से सुरक्षित आजीविका तक | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334805
+
+FEED https://pib.gov.in/RssMain.aspx?ModId=6&Lang=2&Regid=3
+  status 200 | bytes 7431 | content-language: None | set-cookie: False
+  items: 20
+   - [HINDI] वाणिज्य एवं उद्योग मंत्री श्री पीयूष गोयल ने कहा, भारत मोबिलिटी एक्सपो को वैश्विक स्तर पर  | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334875
+   - [HINDI] दिल्ली हाट में आयोजित ‘शिल्प समागम मेला 2026’ में कुल 64.52 लाख रुपये से अधिक की बिक्री हु | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334869
+   - [HINDI] आर्थिक तंगी से लेकर वैश्विक स्तर की शिक्षा के अवसर तक का सफर | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334818
+   - [HINDI] व्यावसायिक जोखिम से सुरक्षित आजीविका तक | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334805
+
+FEED https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1
+  status 200 | bytes 7431 | content-language: None | set-cookie: False
+  items: 20
+   - [HINDI] वाणिज्य एवं उद्योग मंत्री श्री पीयूष गोयल ने कहा, भारत मोबिलिटी एक्सपो को वैश्विक स्तर पर  | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334875
+   - [HINDI] दिल्ली हाट में आयोजित ‘शिल्प समागम मेला 2026’ में कुल 64.52 लाख रुपये से अधिक की बिक्री हु | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334869
+   - [HINDI] आर्थिक तंगी से लेकर वैश्विक स्तर की शिक्षा के अवसर तक का सफर | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334818
+   - [HINDI] व्यावसायिक जोखिम से सुरक्षित आजीविका तक | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334805
+
+FEED https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=1
+  status 200 | bytes 243 | content-language: None | set-cookie: False
+  items: 0
+
+FEED https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=2
+  status 200 | bytes 243 | content-language: None | set-cookie: False
+  items: 0
+
+FEED https://www.pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3
+  status 200 | bytes 7431 | content-language: None | set-cookie: False
+  items: 20
+   - [HINDI] वाणिज्य एवं उद्योग मंत्री श्री पीयूष गोयल ने कहा, भारत मोबिलिटी एक्सपो को वैश्विक स्तर पर  | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334875
+   - [HINDI] दिल्ली हाट में आयोजित ‘शिल्प समागम मेला 2026’ में कुल 64.52 लाख रुपये से अधिक की बिक्री हु | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334869
+   - [HINDI] आर्थिक तंगी से लेकर वैश्विक स्तर की शिक्षा के अवसर तक का सफर | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334818
+   - [HINDI] व्यावसायिक जोखिम से सुरक्षित आजीविका तक | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334805
+
+=== 2. RELEASE PAGE VARIANTS for PRID 2334875 ===
+
+PAGE page_plain https://www.pib.gov.in/PressReleasePage.aspx?PRID=2334875
+  status 200 | final url https://www.pib.gov.in/PressReleasePage.aspx?PRID=2334875&reg=48&lang=2 | html bytes 290952 | visible text chars 37565
+  has 'Posted On': False | has Devanagari: True
+  <title>: Press Release Page | Press Information Bureau
+   h1 ['वाणिज्य एवं उद्योग मंत्री श्री पीयूष गोयल ने कहा, भारत मोबिलिटी एक्सपो को वैश्विक स्तर पर ']
+   h2 ['']
+   h3 ['श्री पीयूष गोयल ने मोबिलिटी उद्योग जगत से वैश्विक बाजारों का लाभ उठाने और भारत की विनिर्मा']
+  interesting classes: ['div.BackgroundRelease', 'div.MinistryNameSubhead', 'div.ReleaseDateSubHeaddateTime', 'div.ReleaseLang', 'div.innner-page-main-about-us-content-right-part']
+  first 500 chars of visible text:
+    Press Release Page | Press Information Bureau | वाणिज्‍य एवं उद्योग मंत्रालय | वाणिज्य एवं उद्योग मंत्री श्री पीयूष गोयल ने कहा, भारत मोबिलिटी एक्सपो को वैश्विक स्तर पर पहचान मिल रही है, इसका तीसरा संस्करण दुनिया का दूसरा सबसे बड़ा एक्सपो होगा | श्री पीयूष गोयल ने मोबिलिटी उद्योग जगत से वैश्विक बाजारों का लाभ उठाने और भारत की विनिर्माण पहुंच का विस्तार करने का आग्रह किया | श्री गोयल ने वैश्विक साझेदारियों और निर्यात-आधारित विकास के माध्यम से भारत को दुनिया का विनिर्माण केंद्र (मैन्युफैक्चरिंग हब) बनाने 
+
+PAGE page_reg3_lang1 https://www.pib.gov.in/PressReleasePage.aspx?PRID=2334875&reg=3&lang=1
+  status 200 | final url https://www.pib.gov.in/PressReleasePage.aspx?PRID=2334875&reg=3&lang=1 | html bytes 289858 | visible text chars 37565
+  has 'Posted On': False | has Devanagari: True
+  <title>: Press Release Page | Press Information Bureau
+   h1 ['वाणिज्य एवं उद्योग मंत्री श्री पीयूष गोयल ने कहा, भारत मोबिलिटी एक्सपो को वैश्विक स्तर पर ']
+   h2 ['']
+   h3 ['श्री पीयूष गोयल ने मोबिलिटी उद्योग जगत से वैश्विक बाजारों का लाभ उठाने और भारत की विनिर्मा']
+  interesting classes: ['div.BackgroundRelease', 'div.MinistryNameSubhead', 'div.ReleaseDateSubHeaddateTime', 'div.ReleaseLang', 'div.innner-page-main-about-us-content-right-part']
+  first 500 chars of visible text:
+    Press Release Page | Press Information Bureau | वाणिज्‍य एवं उद्योग मंत्रालय | वाणिज्य एवं उद्योग मंत्री श्री पीयूष गोयल ने कहा, भारत मोबिलिटी एक्सपो को वैश्विक स्तर पर पहचान मिल रही है, इसका तीसरा संस्करण दुनिया का दूसरा सबसे बड़ा एक्सपो होगा | श्री पीयूष गोयल ने मोबिलिटी उद्योग जगत से वैश्विक बाजारों का लाभ उठाने और भारत की विनिर्माण पहुंच का विस्तार करने का आग्रह किया | श्री गोयल ने वैश्विक साझेदारियों और निर्यात-आधारित विकास के माध्यम से भारत को दुनिया का विनिर्माण केंद्र (मैन्युफैक्चरिंग हब) बनाने 
+
+PAGE page_reg3_lang2 https://www.pib.gov.in/PressReleasePage.aspx?PRID=2334875&reg=3&lang=2
+  status 200 | final url https://www.pib.gov.in/PressReleasePage.aspx?PRID=2334875&reg=3&lang=2 | html bytes 289857 | visible text chars 37565
+  has 'Posted On': False | has Devanagari: True
+  <title>: Press Release Page | Press Information Bureau
+   h1 ['वाणिज्य एवं उद्योग मंत्री श्री पीयूष गोयल ने कहा, भारत मोबिलिटी एक्सपो को वैश्विक स्तर पर ']
+   h2 ['']
+   h3 ['श्री पीयूष गोयल ने मोबिलिटी उद्योग जगत से वैश्विक बाजारों का लाभ उठाने और भारत की विनिर्मा']
+  interesting classes: ['div.BackgroundRelease', 'div.MinistryNameSubhead', 'div.ReleaseDateSubHeaddateTime', 'div.ReleaseLang', 'div.innner-page-main-about-us-content-right-part']
+  first 500 chars of visible text:
+    Press Release Page | Press Information Bureau | वाणिज्‍य एवं उद्योग मंत्रालय | वाणिज्य एवं उद्योग मंत्री श्री पीयूष गोयल ने कहा, भारत मोबिलिटी एक्सपो को वैश्विक स्तर पर पहचान मिल रही है, इसका तीसरा संस्करण दुनिया का दूसरा सबसे बड़ा एक्सपो होगा | श्री पीयूष गोयल ने मोबिलिटी उद्योग जगत से वैश्विक बाजारों का लाभ उठाने और भारत की विनिर्माण पहुंच का विस्तार करने का आग्रह किया | श्री गोयल ने वैश्विक साझेदारियों और निर्यात-आधारित विकास के माध्यम से भारत को दुनिया का विनिर्माण केंद्र (मैन्युफैक्चरिंग हब) बनाने 
+
+PAGE iframe https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2334875
+  status 200 | final url https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2334875&reg=48&lang=2 | html bytes 283786 | visible text chars 37495
+  has 'Posted On': False | has Devanagari: True
+  <title>: Press Release:Press Information Bureau
+   h1 ['वाणिज्य एवं उद्योग मंत्री श्री पीयूष गोयल ने कहा, भारत मोबिलिटी एक्सपो को वैश्विक स्तर पर ']
+   h2 ['']
+   h3 ['श्री पीयूष गोयल ने मोबिलिटी उद्योग जगत से वैश्विक बाजारों का लाभ उठाने और भारत की विनिर्मा']
+  interesting classes: ['div.BackgroundRelease', 'div.MinistryNameSubhead', 'div.ReleaseDateSubHeaddateTime', 'div.ReleaseLang', 'div.innner-page-main-about-us-content-right-part']
+  first 500 chars of visible text:
+    Press Release:Press Information Bureau | वाणिज्‍य एवं उद्योग मंत्रालय | वाणिज्य एवं उद्योग मंत्री श्री पीयूष गोयल ने कहा, भारत मोबिलिटी एक्सपो को वैश्विक स्तर पर पहचान मिल रही है, इसका तीसरा संस्करण दुनिया का दूसरा सबसे बड़ा एक्सपो होगा | श्री पीयूष गोयल ने मोबिलिटी उद्योग जगत से वैश्विक बाजारों का लाभ उठाने और भारत की विनिर्माण पहुंच का विस्तार करने का आग्रह किया | श्री गोयल ने वैश्विक साझेदारियों और निर्यात-आधारित विकास के माध्यम से भारत को दुनिया का विनिर्माण केंद्र (मैन्युफैक्चरिंग हब) बनाने का आह्व
+
+=== 3. ALL-RELEASES PAGE ===
+
+PAGE https://www.pib.gov.in/allRel.aspx?lang=1&reg=3
+  status 200 | bytes 151633 | release links: 2
+   - 2334874 [latin] Prime Minister shares a Sanskrit Subhashitam, highlighting the foundation of a p
+   - 2334873 [latin] Prime Minister extends greetings to the nation on the occasion of Bhai Dooj
+  select name= ctl00$Bar1$ddlregion options: ['PIB Delhi', 'PIB Mumbai', 'PIB Hyderabad', 'PIB Chennai', 'PIB Chandigarh', 'PIB Kolkata', 'PIB Bengaluru', 'PIB Bhubaneswar']
+  select name= ctl00$Bar1$ddlLang options: ['हिन्दी', 'English', 'Urdu']
+  select name= ctl00$ContentPlaceHolder1$ddlMinistry options: ['All Ministry', "President's Secretariat", "Vice President's Secretariat", "Prime Minister's Office", 'Lok Sabha Secretariat', 'Rajya Sabha Secretariat', 'Cabinet', 'Cabinet Committee Decisions']
+  select name= ctl00$ContentPlaceHolder1$ddlday options: ['All', '1', '2', '3', '4', '5', '6', '7']
+  select name= ctl00$ContentPlaceHolder1$ddlMonth options: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August']
+  select name= ctl00$ContentPlaceHolder1$ddlYear options: ['2026', '2025', '2024', '2023', '2022', '2021', '2020', '2019']
+
+PAGE https://www.pib.gov.in/allRel.aspx
+  status 200 | bytes 168078 | release links: 0
+  select name= ctl00$Bar1$ddlregion options: ['PIB Delhi', 'PIB Mumbai', 'PIB Hyderabad', 'PIB Chennai', 'PIB Chandigarh', 'PIB Kolkata', 'PIB Bengaluru', 'PIB Bhubaneswar']
+  select name= ctl00$Bar1$ddlLang options: ['हिन्दी', 'English']
+  select name= ctl00$ContentPlaceHolder1$ddlMinistry options: ['सभी मंत्रालय', 'राष्ट्रपति सचिवालय', 'उप राष्ट्रपति सचिवालय', 'प्रधानमंत्री कार्यालय', 'लोकसभा सचिवालय', 'राज्यसभा सचिवालय', 'मंत्रिमण्\u200dडल', 'मंत्रिमण्\u200dडल समिति निर्णय']
+  select name= ctl00$ContentPlaceHolder1$ddlday options: ['All', '1', '2', '3', '4', '5', '6', '7']
+  select name= ctl00$ContentPlaceHolder1$ddlMonth options: ['जनवरी', 'फ़रवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त']
+  select name= ctl00$ContentPlaceHolder1$ddlYear options: ['2026', '2025', '2024', '2023', '2022', '2021', '2020', '2019']
