@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-11-11T09:27:09+05:30",
+ "generated_at": "2026-11-11T17:26:17+05:30",
  "days": [
   {
    "date": "2026-11-11",
-   "total": 20,
+   "total": 40,
    "must": 0,
    "good": 0,
    "skim": 0,
-   "skip": 20,
+   "skip": 40,
    "ap": 0,
    "sample": false
   }
