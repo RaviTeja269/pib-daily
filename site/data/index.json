@@ -1,0 +1,15 @@
+{
+ "generated_at": "2026-11-11T09:20:58+05:30",
+ "days": [
+  {
+   "date": "2026-11-11",
+   "total": 20,
+   "must": 0,
+   "good": 0,
+   "skim": 0,
+   "skip": 20,
+   "ap": 0,
+   "sample": false
+  }
+ ]
+}
