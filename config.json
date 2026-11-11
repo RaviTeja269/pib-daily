@@ -1,0 +1,246 @@
+{
+  "_readme": "Edit this file to tune what the site flags. Weights and keywords are judgment calls, not official PIB categories.",
+
+  "feeds": [
+    {
+      "name": "PIB all ministries (English)",
+      "url": "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3"
+    }
+  ],
+  "extra_feeds": [],
+  "release_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID={prid}&reg=3&lang=1",
+  "iframe_url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID={prid}",
+  "allrel_url": "https://www.pib.gov.in/allRel.aspx?lang=1&reg=3",
+
+  "max_new_per_run": 120,
+  "request_delay_seconds": 1.0,
+  "keep_days": 400,
+  "recent_days_for_dedupe": 10,
+
+  "thresholds": { "must": 7, "good": 5, "skim": 3 },
+  "ap_bonus": 1.5,
+  "default_ministry_weight": 1,
+
+  "ministry_weights": {
+    "cabinet": 3,
+    "prime minister": 3,
+    "president": 2,
+    "finance": 3,
+    "revenue": 2,
+    "economic affairs": 3,
+    "environment": 3,
+    "science and technology": 3,
+    "biotechnology": 3,
+    "earth sciences": 3,
+    "space": 3,
+    "atomic energy": 3,
+    "external affairs": 3,
+    "home affairs": 3,
+    "defence": 3,
+    "agriculture": 3,
+    "electronics": 3,
+    "law and justice": 3,
+    "niti aayog": 3,
+    "election commission": 3,
+    "education": 3,
+    "health": 3,
+    "rural development": 3,
+    "commerce": 3,
+    "jal shakti": 3,
+    "renewable energy": 3,
+    "tribal affairs": 3,
+    "social justice": 3,
+    "women and child": 3,
+    "statistics": 3,
+    "communications": 3,
+    "housing and urban": 2,
+    "road transport": 2,
+    "railways": 2,
+    "power": 2,
+    "petroleum": 2,
+    "coal": 2,
+    "mines": 2,
+    "fisheries": 2,
+    "animal husbandry": 2,
+    "food processing": 2,
+    "labour": 2,
+    "skill development": 2,
+    "culture": 2,
+    "tourism": 2,
+    "textiles": 2,
+    "steel": 2,
+    "panchayati raj": 2,
+    "cooperation": 2,
+    "consumer affairs": 2,
+    "civil aviation": 2,
+    "ports": 2,
+    "corporate affairs": 2,
+    "minority affairs": 2,
+    "personnel": 2,
+    "youth affairs": 2,
+    "micro, small": 2,
+    "parliamentary affairs": 2,
+    "fertilizers": 2,
+    "chemicals": 2,
+    "pib research unit": 3
+  },
+
+  "ministry_subject_hint": {
+    "defence": "Defence & Security",
+    "home affairs": "Defence & Security",
+    "external affairs": "International Relations",
+    "environment": "Environment & Ecology",
+    "renewable energy": "Environment & Ecology",
+    "space": "Science & Tech",
+    "science and technology": "Science & Tech",
+    "biotechnology": "Science & Tech",
+    "electronics": "Science & Tech",
+    "atomic energy": "Science & Tech",
+    "earth sciences": "Geography & Disasters",
+    "finance": "Economy",
+    "economic affairs": "Economy",
+    "commerce": "Economy",
+    "agriculture": "Agriculture & Rural",
+    "rural development": "Agriculture & Rural",
+    "fisheries": "Agriculture & Rural",
+    "health": "Social Sector",
+    "education": "Social Sector",
+    "tribal affairs": "Social Sector",
+    "social justice": "Social Sector",
+    "women and child": "Social Sector",
+    "labour": "Social Sector",
+    "law and justice": "Polity & Governance",
+    "election commission": "Polity & Governance",
+    "parliamentary affairs": "Polity & Governance",
+    "panchayati raj": "Polity & Governance",
+    "personnel": "Polity & Governance",
+    "culture": "History, Art & Culture",
+    "tourism": "History, Art & Culture",
+    "road transport": "Infrastructure & Transport",
+    "railways": "Infrastructure & Transport",
+    "civil aviation": "Infrastructure & Transport",
+    "ports": "Infrastructure & Transport",
+    "housing and urban": "Infrastructure & Transport",
+    "youth affairs": "Awards, Sports & Persons",
+    "jal shakti": "Geography & Disasters"
+  },
+
+  "subjects": {
+    "Polity & Governance": [
+      "constitution*", "parliament*", "lok sabha", "rajya sabha", "bill", "amendment*", "supreme court",
+      "high court*", "election commission", "delimitation", "governor", "panchayat*", "federalism",
+      "right to information", "ombudsman", "lokpal", "comptroller", "finance commission", "nhrc",
+      "tribunal*", "e-governance", "citizenship", "reservation", "statutory", "legislation", "ordinance"
+    ],
+    "Economy": [
+      "gdp", "inflation", "cpi", "wpi", "rbi", "reserve bank", "repo rate", "fiscal", "budget*", "tax*", "gst",
+      "export*", "import*", "trade", "fdi", "foreign direct investment", "investment*", "startup*", "manufactur*",
+      "pli", "bank*", "insurance", "npa", "jan dhan", "disinvestment", "msp", "subsid*", "sebi", "capital expenditure",
+      "unemployment", "plfs", "iip", "economic survey", "msme", "logistics", "tariff*", "current account"
+    ],
+    "Science & Tech": [
+      "isro", "space", "satellite*", "launch vehicle", "artificial intelligence", "semiconductor*", "quantum",
+      "biotechnolog*", "genome", "vaccine*", "research", "innovation", "supercomput*", "5g", "6g", "cyber*",
+      "drone*", "nuclear", "fusion", "gaganyaan", "chandrayaan", "nanotechnolog*", "patent*", "csir", "icmr",
+      "dst", "dbt", "telescope", "mission mode", "deep tech", "robotics", "data centre*", "technology"
+    ],
+    "Environment & Ecology": [
+      "climate*", "biodiversity", "wildlife", "tiger*", "forest*", "wetland*", "ramsar", "carbon", "emission*",
+      "renewable*", "solar", "green hydrogen", "pollution", "air quality", "coral*", "mangrove*", "biosphere",
+      "national park*", "sanctuar*", "ndc", "net zero", "plastic*", "afforestation", "eco-sensitive", "species",
+      "conservation", "wind energy", "ev charging", "circular economy", "cop3*", "unfccc"
+    ],
+    "International Relations": [
+      "bilateral", "summit*", "g20", "brics", "quad", "sco", "asean", "bimstec", "saarc", "united nations", "wto", "imf",
+      "world bank", "ambassador*", "strategic partnership", "indo-pacific", "diaspora", "foreign minister",
+      "free trade agreement", "fta", "cepa", "ceca", "joint statement", "high commission*", "multilateral", "treaty"
+    ],
+    "Defence & Security": [
+      "defence", "army", "navy", "naval", "air force", "iaf", "exercise*", "missile*", "drdo", "indigenous*",
+      "coast guard", "border*", "bsf", "crpf", "internal security", "terror*", "naxal*", "agniveer", "tri-service",
+      "hadr", "warship*", "submarine*", "fighter", "ammunition", "narcotic*"
+    ],
+    "Schemes & Welfare": [
+      "scheme*", "yojana", "mission", "abhiyan", "pradhan mantri", "beneficiar*", "direct benefit transfer", "dbt",
+      "ayushman", "ujjwala", "awas", "svamitva", "swachh*", "jal jeevan", "poshan", "saturation", "welfare",
+      "portal", "outlay"
+    ],
+    "Agriculture & Rural": [
+      "farmer*", "agricultur*", "crop*", "kharif", "rabi", "irrigation", "fertili*", "pm-kisan", "horticultur*",
+      "fisheries", "dairy", "cooperative*", "rural", "mgnrega", "nrlm", "soil health", "millet*", "organic",
+      "natural farming", "food security", "procurement"
+    ],
+    "Social Sector": [
+      "health", "hospital*", "ayush", "nutrition", "education", "nep", "school*", "universit*", "skill*", "women",
+      "child*", "tribal", "scheduled caste*", "disabilit*", "divyang", "senior citizen*", "minorit*", "literacy",
+      "ugc", "aiims", "poverty", "employment", "labour", "social justice", "sanitation", "disease*", "tuberculosis"
+    ],
+    "Infrastructure & Transport": [
+      "highway*", "expressway*", "railway*", "vande bharat", "metro", "airport*", "port", "sagarmala", "shipping",
+      "logistics", "gati shakti", "smart city", "urban", "housing", "bridge*", "waterway*", "bharatmala",
+      "freight corridor", "toll*", "bharatnet", "broadband", "telecom*"
+    ],
+    "History, Art & Culture": [
+      "heritage", "unesco", "museum*", "monument*", "temple*", "festival*", "culture", "cultural", "tradition*",
+      "jayanti", "freedom fighter*", "archaeolog*", "manuscript*", "gi tag*", "geographical indication*",
+      "handloom*", "handicraft*", "classical language*", "folk", "dance", "inscription*"
+    ],
+    "Awards, Sports & Persons": [
+      "award*", "medal*", "olympic*", "commonwealth games", "asian games", "khelo india", "padma", "bharat ratna",
+      "nobel", "sports", "champion*", "trophy", "appointed", "appointment", "felicitat*"
+    ],
+    "Geography & Disasters": [
+      "river*", "glacier*", "himalaya*", "island*", "coast*", "monsoon", "cyclone*", "earthquake*", "flood*",
+      "drought*", "imd", "ocean*", "deep sea", "arctic", "antarctic", "disaster*", "ndma", "landslide*", "tsunami"
+    ]
+  },
+
+  "high_signal": [
+    { "pattern": "cabinet approves|cabinet approved|cabinet decision|ccea|union cabinet|cabinet nod", "points": 4, "label": "Cabinet decision" },
+    { "pattern": "year[- ]end review|year ender", "points": 3, "label": "Year-end review" },
+    { "pattern": "backgrounder|explainer|factsheet|fact sheet", "points": 2, "label": "Explainer" },
+    { "pattern": "\\bmou\\b|memorandum of understanding|agreement signed|signs? (an )?agreement|signed an agreement|\\bpact\\b|\\btreaty\\b", "points": 2, "label": "MoU / agreement" },
+    { "pattern": "(launch|unveil|roll(s|ed)? out|introduc|flags? off|inaugurat)\\w*.{0,60}(scheme|portal|mission|app\\b|platform|initiative|programme|yojana|abhiyan|campaign|dashboard|index)", "points": 2.5, "label": "Scheme / portal launch" },
+    { "pattern": "\\bnotif(y|ies|ied|ication)\\b|gazette|\\brules?, 20\\d\\d", "points": 2, "label": "Notification / rules" },
+    { "pattern": "\\bbill\\b|\\bact, 20\\d\\d|\\bamendment\\b|\\bordinance\\b", "points": 2, "label": "Law / bill" },
+    { "pattern": "\\breport\\b|\\bindex\\b|ranking|\\bsurvey\\b|\\brank(s|ed)?\\b|\\bdata (shows|released)|statistics|\\bestimates?\\b", "points": 2, "label": "Report / index" },
+    { "pattern": "guidelines|\\bpolicy\\b|framework|\\bsop\\b|roadmap|\\bstrategy\\b|standard operating", "points": 2, "label": "Policy / guidelines" },
+    { "pattern": "(joint|naval|military|air|tri-service|bilateral|multilateral)\\s+exercise|\\bexercise\\s+['‘“\"A-Z]", "points": 3, "label": "Exercise" },
+    { "pattern": "declared|designated|inscribed|recogni[sz]ed|\\bunesco\\b|\\bramsar\\b|gi tag|geographical indication", "points": 2.5, "label": "Recognition / tag" },
+    { "pattern": "joint statement|strategic partnership|bilateral (visit|talks|meeting)|state visit", "points": 2, "label": "Bilateral outcome" },
+    { "pattern": "\\bisro\\b|lift ?off|launch (vehicle|of).{0,40}(satellite|mission)|satellite.{0,40}launch|\\bgaganyaan\\b|\\bchandrayaan\\b", "points": 2.5, "label": "Space mission" },
+    { "pattern": "first[- ]ever|first time|world'?s (largest|first)|india'?s first|indigenous|record", "points": 1.5, "label": "First / record" },
+    { "pattern": "committee|commission|task force|constitutes|constituted|\\bpanel\\b", "points": 1.5, "label": "Committee / body" },
+    { "pattern": "salient features|key features|key highlights", "points": 1.5, "label": "Salient features" },
+    { "pattern": "approved|sanction(ed|s)?|outlay|\\bcrore\\b", "points": 1, "label": "Funding" },
+    { "pattern": "appointed|appointment of|assumes charge|takes charge", "points": 1, "label": "Appointment" },
+    { "pattern": "(celebrat|observ|mark)\\w*.{0,40}(day|week|diwas|saptah)|\\bworld \\w+ day\\b|international day", "points": 1, "label": "Day / observance" }
+  ],
+
+  "low_signal": [
+    { "pattern": "calls? on |called on|courtesy call|greets|greetings|wishes|condol|pays? (rich )?tribute|paid homage|pays homage|credentials", "points": 3, "label": "Courtesy / ceremonial" },
+    { "pattern": "special campaign|swachhata pakhwada|pending matters|disposal of pending|institutionali[sz]ing swachhata", "points": 2.5, "label": "Routine admin campaign" },
+    { "pattern": "tender|answer key|limited departmental competitive|recruitment result|results? of|examination, 20\\d\\d|admit card|vacancy circular", "points": 3, "label": "Admin notice" },
+    { "pattern": "birthday|punyatithi|birth anniversary", "points": 1, "label": "Birthday / anniversary" },
+    { "pattern": "\\b(reviews?|chairs?|visits?|inspects?|takes? stock|attends?|addresses|interacts?|participates?|meets|interacted)\\b", "points": 1, "label": "Routine event" },
+    { "pattern": "photo gallery|media advisory|media invitation|invitation to", "points": 2, "label": "Media notice" }
+  ],
+
+  "ap_keywords": [
+    "andhra", "amaravati", "vijayawada", "visakhapatnam", "vizag", "tirupati", "tirumala", "sriharikota", "guntur",
+    "nellore", "kurnool", "anantapur", "anantapuramu", "kadapa", "chittoor", "rajahmundry", "rajamahendravaram",
+    "kakinada", "srikakulam", "vizianagaram", "machilipatnam", "polavaram", "srisailam", "godavari", "krishna river",
+    "araku", "simhachalam", "lepakshi", "kondapalli", "etikoppaka", "banganapalli", "kalamkari", "bobbili", "dharmavaram",
+    "uppada", "rayalaseema", "nagarjuna sagar", "nagarjunasagar", "puttaparthi", "gandikota", "telugu", "pib vijayawada",
+    "sri city", "krishnapatnam", "gangavaram", "bhogapuram", "kalpakkam"
+  ],
+
+  "enrich": {
+    "api_key_env": "ANTHROPIC_API_KEY",
+    "model": "claude-sonnet-5-5",
+    "min_priority": "good",
+    "max_items_per_day": 30,
+    "max_body_chars": 5000,
+    "telugu": true
+  }
+}

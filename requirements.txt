@@ -1,0 +1,4 @@
+requests>=2.31
+beautifulsoup4>=4.12
+# Optional: only needed for the AI notes (set ANTHROPIC_API_KEY to turn them on)
+anthropic>=0.40
