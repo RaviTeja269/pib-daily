@@ -1,0 +1,78 @@
+name: Update PIB and deploy site
+
+on:
+  schedule:
+    # Every hour. PIB's feed keeps only about the latest 20 releases, so polling hourly
+    # is what stops releases from rolling off before they are picked up. (Times are UTC.)
+    - cron: "17 * * * *"
+    # 23:10 IST: also sweep PIB's "All releases" page for the day (best effort).
+    - cron: "40 17 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "scripts/**"
+      - "config.json"
+      - ".github/workflows/daily.yml"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pib-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch and tag new releases
+        env:
+          # Optional. Leave the secret unset to run without AI notes.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          ARGS=""
+          if [ "${{ github.event.schedule }}" = "40 17 * * *" ]; then ARGS="--allrel today"; fi
+          python scripts/fetch_pib.py $ARGS
+
+      - name: Commit new data
+        run: |
+          git config user.name "pib-exam-daily bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A site/data
+          if git diff --cached --quiet; then
+            echo "No new releases this run."
+          else
+            git commit -m "Update PIB data $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push || (git pull --rebase && git push)
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
